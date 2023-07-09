@@ -1,51 +1,31 @@
-Smart Contract: PojectExample
+# Project Example:
 
-This smart contract performs the require(), assert(), and revert() statements to do various checks and calculations. It takes a value as input, performs some calculations, and returns the result.
+This smart contract implements the `require()`, `assert()`, and `revert()` statements in Solidity.
 
-Functions:
-checkValue::
+## Requirements:
 
-This function takes a uint256 value as an input parameter and returns a uint256 result. It performs the following steps:
+- Solidity version: ^0.8.0
 
-1. Checks if the input value is greater than zero using the require() statement. If the condition is not met, it reverts the transaction with an error message.
+## Contract Details:
 
-2. Initializes a uint256 variable called result.
+### `checkValue` Function::
 
-3. Checks if the value is less than 100 using the assert() statement. If the condition does not follows, it reverts the transaction.
+This function takes an unsigned integer `value` as a parameter and returns an unsigned integer as the result.
 
-4. It Performs a calculation by multiplying the value by 2 and assigns the result to the result variable.
+1. The `require()` statement ensures that the `value` is greater than 0. If it's not, it will revert the transaction with the error message "Value must be greater than zero."
 
-5. Checks if the result is greater than 200 using an if statement. If the condition is met, it reverts the transaction with an error message.
+2. After the `require()` statement, the `assert()` statement checks if the `value` is less than 100. If it's not, it will throw an exception.
 
-6. Returns the result variable.
+3. The function then performs some calculations by multiplying the `value` by 2 and assigns it to the `result` variable.
 
-Usage:
+4. Finally, the function checks if the `result` is greater than 200. If it is, it will revert the transaction with the error message "Result cannot exceed 200."
 
-1. Deploy the smart contract to a compatible Ethereum Virtual Machine (EVM).
+## Usage:
 
-2. Call the checkValue() function, providing a positive non-zero value as the input.
+Deploy the contract to a compatible Ethereum Virtual Machine (EVM) using a Solidity compiler that supports version 0.8.0 or higher.
 
-3. The smart contract will validate the input using the require() statement. If the condition is met, it proceeds to the next steps.
+Call the `checkValue` function and pass an appropriate value as an argument to test the require, assert, and revert statements.
 
-4. The smart contract will validate the input using the assert() statement. If the condition is met, it proceeds to the next steps.
+## License:
 
-5. The smart contract will perform calculations by multiplying the input value by 2.
-
-6. The smart contract will check if the result exceeds 200. If the condition is met, it reverts the transaction with an error message.
-
-7. If all conditions are met, the smart contract returns the calculated result.
-
-Error Handling:
-
-This smart contract utilizes the following error handling mechanisms:
-
-require(): It checks if the input value is greater than zero. If the condition is not met, it reverts the transaction with an error message.
-
-assert(): It checks if the input value is less than 100. If the condition is not met, it reverts the transaction without a specific error message.
-
-revert(): It checks if the calculated result exceeds 200. If the condition is met, it reverts the transaction with an error message.
-
-Please note that the revert() statement can also be used with custom error messages to provide more specific details about the error encountered.
-
-License:
-This smart contract is licensed under the MIT license.
+This code is licensed under the MIT License.
